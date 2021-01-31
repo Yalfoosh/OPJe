@@ -25,14 +25,16 @@ If you want to run the Jupyter notebooks:
 - run `conda install ipykernel` (skip this if you already have `ipykernel` installed in your environment)
 - run `python3 -m ipykernel install --user --name=env_name`
 
+Although you can run Jupyter without this due to it being in the `requirements.txt`, this is so you can use your environment to run the notebook.
+
 ## Documentation
 
 The documentation, rather, the report can be found in the `docs` folder. If you found this repository useful, rather than citing the report cite this repository. After all, it's the implementation that counts here, the results should be attributed to the original architecture authors :D.
 
 ## Execution
 
-You can use the scripts in the `scripts` folder by running `bash scripts/name-of-script.sh`. They run the python code and serve as templates for easier argument passing.
+You can use the scripts in the `scripts` folder by running `bash scripts/name-of-script.sh`. They run the python code and serve as templates for easier argument passing. Make sure that whatever you run, you run while in the root folder of the project (again, `./project`).
 
 ## Examples
 
-All examples are within the `demo` folder, in the shape of Jupyter Notebooks. Running a notebook is an idempotent operation, so there's no fear you'll break something if you run it several times.
+All examples are within the `demo` folder, in the shape of Jupyter notebooks. Running a notebook is an idempotent operation, so there's no fear you'll break something if you run it several times.
