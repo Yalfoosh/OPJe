@@ -14,7 +14,7 @@ Assuming you use one of the [conda](https://docs.conda.io/en/latest/) flavours a
   - your environment name can be whatever, but for this tutorial `env_name` will serve as a reference to whatever name you choose
 - run `conda activate env_name`
 - install **PyTorch 1.7.1** according to the instructions [here](https://pytorch.org/get-started/locally/) (skip this if **PyTorch 1.7.1** is already installed in your environment)
-  - ex. for my Linux build the command was `conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch`
+  - ex. for my Linux build the command was `conda install pytorch cudatoolkit=10.1 -c pytorch` (note that I skip `torchvision` and `torchaudio`)
 - position yourself in the root directory of the project (relative to the repository it's `./project`)
 - run `pip install -r requirements.txt`
 
