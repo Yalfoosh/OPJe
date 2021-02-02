@@ -103,17 +103,5 @@ def raw_dataset_to_row_dict(
 
 def preprocess_text(text: str):
     no_html_text = strip_html_tags(text)
-    decorator_separated_text = constants.DECORATOR_GROUP_REGEX.sub(
-        r" \1 ", no_html_text
-    )
-    unquoted_text = constants.QUOTED_TEXT_REGEX.sub(r" \1 ", decorator_separated_text)
 
-    tokens = nltk.tokenize.word_tokenize(unquoted_text)
-
-    return " ".join(
-        [
-            token
-            for token in tokens
-            if constants.MEANINGLESS_REGEX.fullmatch(token) is None
-        ]
-    )
+    return no_html_text
