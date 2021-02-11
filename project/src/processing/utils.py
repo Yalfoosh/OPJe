@@ -7,8 +7,10 @@ from typing import Dict, Iterable, Union
 
 import nltk
 
-import constants
-
+IMDB_NAME_TO_LABEL_DICT = {
+    "neg": 0,
+    "pos": 1,
+}
 
 class _MLStripper(HTMLParser):
     def __init__(self):
@@ -55,7 +57,7 @@ def unpack_archive(source_path: Union[str, Path], destination_dir: Union[str, Pa
 
 def example_dir_to_rows(
     source_dir: Union[Path, str],
-    name_to_label_dict: Dict[str, int] = constants.IMDB_NAME_TO_LABEL_DICT,
+    name_to_label_dict: Dict[str, int] = IMDB_NAME_TO_LABEL_DICT,
 ):
     if not os.path.exists(source_dir):
         raise FileNotFoundError(f"Directory {source_dir} doesn't exist!")
