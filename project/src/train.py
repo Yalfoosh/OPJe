@@ -229,8 +229,8 @@ def main():
     args = parser.parse_args()
 
     # region Dataset Preparation
-    train_set = ImdbDataset(path=args.training_set_path, max_entries=args.batch_size)
-    test_set = ImdbDataset(path=args.test_set_path, max_entries=args.batch_size)
+    train_set = ImdbDataset(path=args.training_set_path)
+    test_set = ImdbDataset(path=args.test_set_path)
 
     basic_transform = BasicPradoTransform()
 

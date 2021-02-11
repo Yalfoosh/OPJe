@@ -2,6 +2,7 @@ import numpy as np
 import sklearn
 import torch
 from torch.utils.data import Dataset, DataLoader
+from tqdm import tqdm
 
 
 def get_labels(model, dataset: Dataset, batch_size: int, collate_function=None):
@@ -16,9 +17,11 @@ def get_labels(model, dataset: Dataset, batch_size: int, collate_function=None):
     )
 
     with torch.no_grad():
-        for batch in dataloader:
-            inputs, labels = batch
-
+        for inputs, labels in tqdm(
+            dataloader,
+            desc="Evaluating",
+            total=(len(dataset) + batch_size - 1) // batch_size,
+        ):
             y_true.extend(labels)
             y_pred.extend(torch.argmax(model(inputs), dim=1))
 
